@@ -22,24 +22,26 @@ const handleSubmit = () => {
 </script>
 
 <template>
-  <h1>Form Input</h1>
-  <form @submit.prevent="handleSubmit">
-    <FormInput
-      type="text"
-      label="Name"
-      v-model="name"
-      :error-message="errorMessage?.name"
-      @input="validateField('name')"
-    />
-    <FormInput
-      type="email"
-      label="Email"
-      v-model="email"
-      :error-message="errorMessage?.email"
-      @input="validateField('email')"
-    />
-    <button>submit</button>
-  </form>
+  <main>
+    <h1>Form Input</h1>
+    <form @submit.prevent="handleSubmit">
+      <FormInput
+        type="text"
+        label="Name"
+        v-model="name"
+        :error-message="errorMessage?.name"
+        @input="validateField('name')"
+      />
+      <FormInput
+        type="email"
+        label="Email"
+        v-model="email"
+        :error-message="errorMessage?.email"
+        @input="validateField('email')"
+      />
+      <button>submit</button>
+    </form>
+  </main>
 </template>
 
 <style scoped>
