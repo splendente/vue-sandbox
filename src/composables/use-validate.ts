@@ -4,7 +4,11 @@ import { UserSchema as schema } from '@/libs/zod'
 export default function useValidate(fields) {
   const errorMessage = ref({})
 
-  const validateField = (fieldName: string) => {
+  const validateField = (event, fieldName: string) => {
+    if (event.target.value !== fields[fieldName].value) {
+      fields[fieldName].value = event.target.value
+    }
+
     const fieldSchema = schema.shape[fieldName]
     const result = fieldSchema.safeParse(fields[fieldName].value)
 

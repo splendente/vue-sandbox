@@ -30,14 +30,14 @@ const handleSubmit = () => {
         label="Name"
         v-model="name"
         :error-message="errorMessage?.name"
-        @input="validateField('name')"
+        @input="(event) => validateField(event, 'name')"
       />
       <FormInput
         type="email"
         label="Email"
         v-model="email"
         :error-message="errorMessage?.email"
-        @input="validateField('email')"
+        @input="(event) => validateField(event, 'email')"
       />
       <button>submit</button>
     </form>
